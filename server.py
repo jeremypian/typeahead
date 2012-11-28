@@ -14,6 +14,7 @@ def suggest(keyword):
 				matched_words.append(word)
 				if len(matched_words) == 10:
 					break
-		return matched_words
+		html_li_element = ['<li>%s</li>' % word for word in matched_words] 
+		return html_li_element
 
 run(host='localhost', port=8080)

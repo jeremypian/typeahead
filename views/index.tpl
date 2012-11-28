@@ -3,7 +3,10 @@
 	$(function() {
 		var $input = $('form input[type="text"]');
 		$input.keyup(function() {
-			$('#result').load('/suggest/' + $input.val());
+			var prefix = $input.val();
+			if (prefix) {
+				$('#result').load('/suggest/' + prefix);
+			}
 		});
 	});
 </script>
@@ -11,5 +14,4 @@
 <input type="text"/>
 <input type="submit"/>
 </form>
-<p id='result'>
-</p>
+<ul id='result'/>
